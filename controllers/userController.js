@@ -87,7 +87,7 @@ exports.updateOperator = async (req, res) => {
     if (name) operator.name = name;
     if (email) operator.email = email;
     if (password) {
-      const bcrypt = require("bcrypt");
+      const bcrypt = require("bcryptjs");
       operator.password = await bcrypt.hash(password, 10);
     }
 
@@ -113,7 +113,7 @@ exports.updateCommuter = async (req, res) => {
     if (email) commuter.email = email;
 
     if (password) {
-      const bcrypt = require("bcrypt");
+      const bcrypt = require("bcryptjs");
       commuter.password = await bcrypt.hash(password, 10);
     }
 
